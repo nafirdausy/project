@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:project/home.dart';
 import 'dart:async';
-import 'package:project/main.dart';
-
 
 class SplashScreen extends StatefulWidget{
+  const SplashScreen({Key? key}) : super(key: key);
 
+  @override
   _SplashScreen createState() => _SplashScreen();
 
 }
 
 class _SplashScreen extends State<SplashScreen>{
 
+  @override
   void initState(){
     super.initState();
     splashscreenStart();
@@ -21,8 +23,7 @@ class _SplashScreen extends State<SplashScreen>{
     return Timer(duration, (){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => MyApp()),
-
+        MaterialPageRoute(builder: (context) => const Home()),
       );
     });
   }
@@ -37,27 +38,28 @@ class _SplashScreen extends State<SplashScreen>{
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            
-            Image.asset('images/icon.png',
-                width: 175.0,
-                height: 175.0,
-                fit: BoxFit.cover
+
+            Image.asset(
+              'images/icon.png',
+              width: 175.0,
+              height: 175.0,
+              fit: BoxFit.cover
             ), 
 
-            SizedBox(height: 24.0,),
+            const SizedBox(height: 24.0,),
 
-            Text("CheckBarang",
+            const Text(
+              "CheckBarang",
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 30.0,
               ),
             ),
-            
+
           ],
         ),
       ),
     );
   }
-
 }
